@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Forward an HTTPS callback to your desktop app.">
     <title>Trampoline</title>
+    <script src="destination.js" defer></script>
   </head>
   <body>
     <main>
       <h1>Trampoline</h1>
       <p>A simple HTTPS callback bridge for your desktop app.</p>
-      <p>Destination setup is coming soon.</p>
+      <form id="destination-form">
+        <p>
+          <label for="destination">Callback destination</label><br>
+          <input id="destination" name="destination" type="url" required
+            placeholder="my-scheme://some-callback" aria-describedby="destination-help">
+        </p>
+        <p id="destination-help">Enter a full URL.</p>
+        <button type="submit">Save destination</button>
+      </form>
+      <p id="status" role="status"></p>
+      <noscript><p>Enable JavaScript to save your destination.</p></noscript>
     </main>
   </body>
 </html>
