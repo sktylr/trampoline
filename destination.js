@@ -1,10 +1,9 @@
-const storageKey = 'trampoline:destination';
 const form = document.querySelector('#destination-form');
 const destination = document.querySelector('#destination');
 const status = document.querySelector('#status');
 
 try {
-  const saved = localStorage.getItem(storageKey);
+  const saved = destinationStore.getDestination();
   if (saved) {
     destination.value = saved;
     status.textContent = 'Saved destination loaded. Changes apply after saving.';
@@ -35,7 +34,7 @@ form.addEventListener('submit', (event) => {
   }
 
   try {
-    localStorage.setItem(storageKey, value);
+    destinationStore.setDestination(value);
     destination.value = value;
     status.textContent = 'Destination saved in this browser.';
   } catch {

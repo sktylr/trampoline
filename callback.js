@@ -4,7 +4,7 @@ const destination = document.querySelector('#destination');
 function redirect() {
   let saved;
   try {
-    saved = localStorage.getItem('trampoline:destination');
+    saved = destinationStore.getDestination();
   } catch {
     status.textContent = 'Browser storage is unavailable. Allow local storage and try again.';
     return;
