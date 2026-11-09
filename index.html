@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Forward an HTTPS callback to your desktop app.">
     <title>Trampoline</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="storage.js" defer></script>
     <script src="destination.js" defer></script>
   </head>
   <body>
     <main>
+      <span class="eyebrow">A little bridge to your app</span>
       <h1>Trampoline</h1>
-      <p>A simple HTTPS callback bridge for your desktop app.</p>
+      <p class="intro">One callback. A smooth landing in your app.</p>
       <form id="destination-form">
         <p>
-          <label for="destination">Callback destination</label><br>
+          <label for="destination">Callback destination</label>
           <input id="destination" name="destination" type="url" required
             placeholder="my-scheme://some-callback" aria-describedby="destination-help">
         </p>
@@ -23,6 +25,7 @@
       </form>
       <p id="status" role="status"></p>
       <noscript><p>Enable JavaScript to save your destination.</p></noscript>
+      <footer>Saved in this browser. Ready for your next bounce.</footer>
     </main>
   </body>
 </html>

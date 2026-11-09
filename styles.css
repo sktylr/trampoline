@@ -1,0 +1,139 @@
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #233b34;
+  background: #f5f5ef;
+  line-height: 1.6;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  margin: 0;
+  padding: clamp(1.25rem, 6vw, 5rem);
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at top left, #e1eee4, transparent 65%);
+}
+
+main {
+  width: 100%;
+  max-width: 36rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid #dce4da;
+  border-radius: 1.5rem;
+  background: #fffefa;
+  box-shadow: 0 1rem 4rem #233b340a;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  background: #e6efe5;
+  color: #365a43;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+.intro {
+  margin: 0 0 2rem;
+  color: #596b62;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #aab9ad;
+  border-radius: 0.6rem;
+  color: inherit;
+  background: #fff;
+  font: inherit;
+}
+
+input::placeholder {
+  color: #68766d;
+}
+
+#destination-help {
+  margin: -0.5rem 0 1.5rem;
+  color: #596b62;
+  font-size: 0.85rem;
+}
+
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  background: #254f3e;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  background: #183c2d;
+}
+
+a {
+  color: #254f3e;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid #487c60;
+  outline-offset: 4px;
+}
+
+#status {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+#status:empty {
+  display: none;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e1e6dc;
+  color: #596b62;
+  font-size: 0.8rem;
+}
+
+[hidden] {
+  display: none !important;
+}
