@@ -14,13 +14,17 @@
       <span class="eyebrow">A little bridge to your app</span>
       <h1>Trampoline</h1>
       <p class="intro">One callback. A smooth landing in your app.</p>
+      <section class="saved-destination" aria-labelledby="saved-heading">
+        <h2 id="saved-heading">Currently saved destination</h2>
+        <p id="saved-destination">No destination saved yet.</p>
+      </section>
       <form id="destination-form">
         <p>
           <label for="destination">Callback destination</label>
           <input id="destination" name="destination" type="url" required
             placeholder="my-scheme://some-callback" aria-describedby="destination-help">
         </p>
-        <p id="destination-help">Enter a full URL.</p>
+        <p id="destination-help">Enter a full URL. Changes apply after saving.</p>
         <button type="submit">Save destination</button>
       </form>
       <p id="status" role="status"></p>

@@ -63,6 +63,24 @@ label {
   font-weight: 650;
 }
 
+.saved-destination {
+  margin-bottom: 1.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #dce4da;
+  border-radius: 0.6rem;
+  background: #f1f5ee;
+}
+
+.saved-destination h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: #596b62;
+}
+
+.saved-destination p {
+  margin: 0;
+}
+
 input {
   width: 100%;
   min-height: 3rem;
@@ -118,17 +136,14 @@ a {
 }
 
 #status {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0 0;
+  min-height: 3.2em;
   font-size: 0.9rem;
 }
 
-#status:empty {
-  display: none;
-}
-
 footer {
-  margin-top: 2rem;
-  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
   border-top: 1px solid #e1e6dc;
   color: #596b62;
   font-size: 0.8rem;

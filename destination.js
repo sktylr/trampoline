@@ -1,14 +1,16 @@
 const form = document.querySelector('#destination-form');
 const destination = document.querySelector('#destination');
 const status = document.querySelector('#status');
+const savedDestination = document.querySelector('#saved-destination');
 
 try {
   const saved = destinationStore.getDestination();
   if (saved) {
     destination.value = saved;
-    status.textContent = 'Saved destination loaded. Changes apply after saving.';
+    savedDestination.textContent = saved;
   }
 } catch {
+  savedDestination.textContent = 'Unable to read the saved destination.';
   status.textContent = 'Browser storage is unavailable. Allow local storage to save a destination.';
 }
 
@@ -36,6 +38,7 @@ form.addEventListener('submit', (event) => {
   try {
     destinationStore.setDestination(value);
     destination.value = value;
+    savedDestination.textContent = value;
     status.textContent = 'Destination saved in this browser.';
   } catch {
     status.textContent = 'Could not save the destination. Check your browser storage settings and try again.';
