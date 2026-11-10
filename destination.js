@@ -2,12 +2,14 @@ const form = document.querySelector('#destination-form');
 const destination = document.querySelector('#destination');
 const status = document.querySelector('#status');
 const savedDestination = document.querySelector('#saved-destination');
+const deleteButton = document.querySelector('#delete-destination');
 
 try {
   const saved = destinationStore.getDestination();
   if (saved) {
     destination.value = saved;
     savedDestination.textContent = saved;
+    deleteButton.hidden = false;
   }
 } catch {
   savedDestination.textContent = 'Unable to read the saved destination.';
@@ -17,6 +19,20 @@ try {
 destination.addEventListener('input', () => {
   destination.setCustomValidity('');
   status.textContent = '';
+});
+
+deleteButton.addEventListener('click', () => {
+  try {
+    destinationStore.deleteDestination();
+    savedDestination.textContent = 'No destination saved yet.';
+    deleteButton.hidden = true;
+    destination.value = '';
+    destination.setCustomValidity('');
+    destination.focus();
+    status.textContent = 'Destination deleted from this browser.';
+  } catch {
+    status.textContent = 'Could not delete the destination. Check your browser storage settings and try again.';
+  }
 });
 
 form.addEventListener('submit', (event) => {
@@ -39,6 +55,7 @@ form.addEventListener('submit', (event) => {
     destinationStore.setDestination(value);
     destination.value = value;
     savedDestination.textContent = value;
+    deleteButton.hidden = false;
     status.textContent = 'Destination saved in this browser.';
   } catch {
     status.textContent = 'Could not save the destination. Check your browser storage settings and try again.';

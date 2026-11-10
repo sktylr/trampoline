@@ -7,6 +7,9 @@ const destinationStore = (() => {
     },
     setDestination(value) {
       localStorage.setItem(key, value);
+    },
+    deleteDestination() {
+      localStorage.removeItem(key);
     }
   };
 })();

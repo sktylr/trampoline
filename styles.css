@@ -79,6 +79,15 @@ label {
 
 .saved-destination p {
   margin: 0;
+  min-width: 0;
+}
+
+.saved-destination-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 input {
@@ -123,6 +132,19 @@ button,
 button:hover,
 .button:hover {
   background: #183c2d;
+}
+
+.delete-button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-color: #aab9ad;
+  background: transparent;
+  color: #7a302b;
+  font-size: 0.85rem;
+}
+
+.delete-button:hover {
+  background: #f8e9e6;
 }
 
 a {
